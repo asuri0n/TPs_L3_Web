@@ -69,7 +69,6 @@ class FileStore {
         $this->lockFile();
         /* on lit le contenu */
         $content = file_get_contents($this->file);
-        echo "e".$content;
         /* on désérialise le contenu,
          * pour récupérer ce qui y a été stocké  */
         $data = unserialize(base64_decode($content));

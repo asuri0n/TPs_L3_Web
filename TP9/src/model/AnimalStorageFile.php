@@ -48,11 +48,23 @@ class AnimalStorageFile implements AnimalStorage
 
     function read($id)
     {
-        return $this->db[$id];
+        if(array_key_exists($id,$this->db))
+            return $this->db[$id];
+        else
+            return null;
     }
 
     function readAll(): array
     {
         return $this->db;
+    }
+
+    function create(Animal $a)
+    {
+        array_push($this->db,$a);
+        $this->nextId++;
+        $dataToBeStored = array('db' => $this->db, 'nextId' => $this->nextId);
+        $this->filestore->saveData($dataToBeStored);
+        var_dump($this->db);
     }
 }

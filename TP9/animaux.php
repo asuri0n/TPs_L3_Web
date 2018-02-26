@@ -17,6 +17,6 @@ require_once("model/AnimalStorageFile.php");
  */
 $animalStorage = new AnimalStorageFile('src/db.txt');
 $animalStorage->reinit();
-$router = new Router();
-$router->main($animalStorage);
+$router = new Router($animalStorage);
+$router->main();
 ?>

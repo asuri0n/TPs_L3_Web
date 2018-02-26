@@ -36,4 +36,9 @@ class AnimalStorageStub implements AnimalStorage
     {
         return $this->animalsTab;
     }
+
+    function create(Animal $a)
+    {
+        // TODO: Implement create() method.
+    }
 }

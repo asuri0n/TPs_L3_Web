@@ -8,6 +8,8 @@
 
 interface AnimalStorage
 {
+    function create(Animal $a);
+
     function read($id);
 
     function readAll(): array;
